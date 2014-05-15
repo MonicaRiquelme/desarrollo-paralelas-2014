@@ -18,7 +18,7 @@ def get_pattern(text, rank, word):
     # el computador que tenga rank = 1 busca en el string formado de dos en dos
     rank = 1
     
-    text_rank1 = text[np.arange(0, N, rank + 1)]
+    text_rank1 = text[np.arange(0, len(text), rank + 1)]
     text_rank1 = text_rank1.tolist()
     text_rank1 = "".join(text_rank1)
     

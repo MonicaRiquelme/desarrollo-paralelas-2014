@@ -1,7 +1,8 @@
+# -*- coding: utf-8 -*-
 '''
 Created on 14-05-2014
 
-@author: leonardojofre
+@author: leonardo jofre
 '''
 
 import random
