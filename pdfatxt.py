@@ -9,23 +9,11 @@ print "Transformando de pdf a txt... " + sys.argv[1]
 #pasamos el pdf por argumento
 comando = commands.getoutput("pdftotext "+sys.argv[1])
 txt= sys.argv[1].replace(".pdf", ".txt");
-#eliminamos tildes y la ñ
-comando = commands.getoutput("perl -pi -e 's[á][a]g' "+txt)
-comando = commands.getoutput("perl -pi -e 's[é][e]g' "+txt)
-comando = commands.getoutput("perl -pi -e 's[í][i]g' "+txt)
-comando = commands.getoutput("perl -pi -e 's[ó][o]g' "+txt)
-comando = commands.getoutput("perl -pi -e 's[ú][u]g' "+txt)
-comando = commands.getoutput("perl -pi -e 's[Á][a]g' "+txt)
-comando = commands.getoutput("perl -pi -e 's[É][e]g' "+txt)
-comando = commands.getoutput("perl -pi -e 's[Í][i]g' "+txt)
-comando = commands.getoutput("perl -pi -e 's[Ó][o]g' "+txt)
-comando = commands.getoutput("perl -pi -e 's[Ú][u]g' "+txt)
-comando = commands.getoutput("perl -pi -e 's[ñ][n]g' "+txt)
-comando = commands.getoutput("perl -pi -e 's[Ñ][n]g' "+txt)
 
 string = open(txt).read()
 #eliminams todo menos letras
-new_str = re.sub('[^a-zA-Z]', '', string)
+str2 = string.replace("á","a").replace("é","e").replace("í","i").replace("ó","o").replace("ú","u").replace("Á","a").replace("É","e").replace("Í","i").replace("Ó","o").replace("Ú","u")
+new_str = re.sub('[^a-zA-Z]', '', str2)
 #todo a minusculas
 str = new_str.lower()
 open(txt, 'w').write(str)
